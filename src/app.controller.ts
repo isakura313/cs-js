@@ -1,9 +1,10 @@
-import { Controller, Get } from '@nestjs/common';
+import { Get, Controller, Render } from '@nestjs/common';
 
 @Controller()
 export class AppController {
   @Get()
-  getHello() {
-    return 'Hello, world!';
+  @Render('index.hbs')
+  root() {
+    return { message: 'Hello world!', data:'JavaScript'} ;
   }
 }
